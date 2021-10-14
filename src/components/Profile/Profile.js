@@ -1,31 +1,39 @@
 import PropTypes from 'prop-types';
+import styles from './Profile.module.css';
 
-export default function Profile({ name, tag, location, followers, views, likes }) {
+export default function Profile({
+  name,
+  tag,
+  location,
+  followers,
+  views,
+  likes,
+}) {
   return (
-    <div class="profile">
-      <div class="description">
+    <div className={styles.profile}>
+      <div className={styles.profile__description}>
         <img
           src="https://proprikol.ru/wp-content/uploads/2020/02/kartinki-na-avatarku-dlya-parnej-i-muzhchin-37.jpg"
           alt="Аватар пользователя"
-          class="avatar"
+          className={styles.profile__avatar}
         />
-        <p class="name">{name}</p>
-        <p class="tag">{tag}</p>
-        <p class="location">{location}</p>
+        <p className={styles.profile__name}>{name}</p>
+        <p className={styles.profile__tag}>{tag}</p>
+        <p className={styles.profile__location}>{location}</p>
       </div>
 
-      <ul class="stats">
-        <li>
-          <span class="label">Followers</span>
-          <span class="quantity">{followers}</span>
+      <ul className={styles.profile__stats}>
+        <li className={styles.profile__statsItem}>
+          <span className={styles.profile__label}>Followers</span>
+          <span className={styles.profile__followers}>{followers}</span>
         </li>
-        <li>
-          <span class="label">Views</span>
-          <span class="quantity">{views}</span>
+        <li className={styles.profile__statsItem}>
+          <span className={styles.profile__label}>Views</span>
+          <span className={styles.profile__views}>{views}</span>
         </li>
-        <li>
-          <span class="label">Likes</span>
-          <span class="quantity">{likes}</span>
+        <li className={styles.profile__statsItem}>
+          <span className={styles.profile__label}>Likes</span>
+          <span className={styles.profile__likes}>{likes}</span>
         </li>
       </ul>
     </div>
@@ -39,4 +47,4 @@ Profile.propTypes = {
   followers: PropTypes.number.isRequired,
   views: PropTypes.number.isRequired,
   likes: PropTypes.number.isRequired,
-}
+};
